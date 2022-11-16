@@ -26,7 +26,6 @@ $smart = new Smart();
 				<th>Kode</th>
 				<th>Kriteria</th>
 				<th>Bobot</th>
-				<th>Normalisasi Bobot</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -37,13 +36,12 @@ $smart = new Smart();
 					<td><?= $kriteria[0] ?></td>
 					<td><?= $kriteria[1] ?></td>
 					<td><?= $kriteria[2] ?></td>
-					<td><?= $smart->normalisasiBobot($kriteria[2]) ?></td>
 				</tr>
 			<?php $no++;
 			} ?>
 			<tr>
 				<td colspan="3">Total</td>
-				<td colspan="2"><?= $smart->totalBobotKriteria(); ?></td>
+				<td><?= $smart->totalBobotKriteria(); ?></td>
 			</tr>
 		</tbody>
 	</table>
@@ -79,6 +77,33 @@ $smart = new Smart();
 					<td><?= $alternatif[6] ?></td>
 					<td><?= $alternatif[7] ?></td>
 					<td><?= $alternatif[8] ?></td>
+				</tr>
+			<?php $no++;
+			} ?>
+		</tbody>
+	</table>
+
+	<!-- 1 Normalisasi Bobot -->
+	<h2>1. Normalisasi Bobot</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Kode</th>
+				<th>Kriteria</th>
+				<th>Bobot</th>
+				<th>Normalisasi Bobot</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php $no = 1;
+			foreach ($smart->normalisasiBobot as $kriteria) { ?>
+				<tr>
+					<td><?= $no ?></td>
+					<td><?= $kriteria[0] ?></td>
+					<td><?= $kriteria[1] ?></td>
+					<td><?= $kriteria[2] ?></td>
+					<td><?= $kriteria[4] ?></td>
 				</tr>
 			<?php $no++;
 			} ?>

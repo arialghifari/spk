@@ -4,6 +4,9 @@ class Smart
 {
 	public $kriteria = array();
 	public $alternatif = array();
+	public $normalisasiBobot = array();
+	public $cmin = array();
+	public $cmax = array();
 
 	function __construct()
 	{
@@ -20,6 +23,8 @@ class Smart
 		array_push($this->alternatif, array('Lulu', 'A1', 100, 100, 100, 50, 50, 60, 50));
 		array_push($this->alternatif, array('Dhika', 'A2', 100, 100, 50, 25, 75, 100, 50));
 		array_push($this->alternatif, array('Asril', 'A3', 100, 50, 100, 25, 75, 80, 25));
+
+		$this->normalisasiBobot();
 	}
 
 	function totalBobotKriteria()
@@ -33,10 +38,12 @@ class Smart
 		return $total;
 	}
 
-	function normalisasiBobot($bobot)
+	function normalisasiBobot()
 	{
-		$normalisasi = $bobot / $this->totalBobotKriteria();
+		foreach ($this->kriteria as $kriteria) {
+			$kriteria[4] = round($kriteria[2] / $this->totalBobotKriteria(), 3);
 
-		return round($normalisasi, 3);
+			array_push($this->normalisasiBobot, $kriteria);
+		}
 	}
 }

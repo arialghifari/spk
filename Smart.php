@@ -7,6 +7,7 @@ class Smart
 	public $normalisasiBobot = array();
 	public $cmin = array();
 	public $cmax = array();
+	public $utilitas = array();
 
 	function __construct()
 	{
@@ -29,6 +30,7 @@ class Smart
 		$this->normalisasiBobot();
 		$this->cmin();
 		$this->cmax();
+		$this->utilitas();
 	}
 
 	function totalBobotKriteria()
@@ -74,6 +76,17 @@ class Smart
 					$this->cmax[$i] = $alternatif[$i + 2];
 				}
 			}
+		}
+	}
+
+	function utilitas()
+	{
+		foreach ($this->alternatif as $alternatif) {
+			for ($i = 0; $i < count($this->cmax); $i++) {
+				$alternatif[$i + 2] = round(($alternatif[$i + 2] - $this->cmin[$i]) / ($this->cmax[$i] - $this->cmin[$i]), 3);
+			}
+
+			array_push($this->utilitas, $alternatif);
 		}
 	}
 }

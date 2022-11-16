@@ -124,6 +124,42 @@ $smart = new Smart();
 			} ?>
 		</tbody>
 	</table>
+
+	<!-- Nilai Utilitas -->
+	<h2>Nilai Utilitas</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Kode</th>
+				<th>C1</th>
+				<th>C2</th>
+				<th>C3</th>
+				<th>C4</th>
+				<th>C5</th>
+				<th>C6</th>
+				<th>C7</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php $no = 1;
+			foreach ($smart->utilitas as $utilitas) { ?>
+				<tr>
+					<td><?= $no ?></td>
+					<td><?= $utilitas[1] ?></td>
+					<td><?= $utilitas[2] ?></td>
+					<td><?= $utilitas[3] ?></td>
+					<td><?= $utilitas[4] ?></td>
+					<td><?= $utilitas[5] ?></td>
+					<td><?= $utilitas[6] ?></td>
+					<td><?= $utilitas[7] ?></td>
+					<td><?= $utilitas[8] ?></td>
+				</tr>
+			<?php $no++;
+			} ?>
+		</tbody>
+	</table>
+
 </body>
 
 </html>

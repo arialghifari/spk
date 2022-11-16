@@ -8,6 +8,7 @@ class Smart
 	public $cmin = array();
 	public $cmax = array();
 	public $utilitas = array();
+	public $nilaiAkhir = array();
 
 	function __construct()
 	{
@@ -31,6 +32,7 @@ class Smart
 		$this->cmin();
 		$this->cmax();
 		$this->utilitas();
+		$this->nilaiAkhir();
 	}
 
 	function totalBobotKriteria()
@@ -53,9 +55,20 @@ class Smart
 		}
 	}
 
+	function setDynamicArray($length, $value)
+	{
+		$array = array();
+
+		for ($i = 1; $i <= $length; $i++) {
+			array_push($array, $value);
+		}
+
+		return $array;
+	}
+
 	function cmin()
 	{
-		$this->cmin = array(100, 100, 100, 100, 100, 100, 100);
+		$this->cmin = $this->setDynamicArray(count($this->kriteria), 100);
 
 		foreach ($this->alternatif as $alternatif) {
 			for ($i = 0; $i < count($this->cmin); $i++) {
@@ -68,7 +81,7 @@ class Smart
 
 	function cmax()
 	{
-		$this->cmax = array(0, 0, 0, 0, 0, 0, 0);
+		$this->cmax = $this->setDynamicArray(count($this->kriteria), 0);
 
 		foreach ($this->alternatif as $alternatif) {
 			for ($i = 0; $i < count($this->cmax); $i++) {
@@ -83,10 +96,28 @@ class Smart
 	{
 		foreach ($this->alternatif as $alternatif) {
 			for ($i = 0; $i < count($this->cmax); $i++) {
-				$alternatif[$i + 2] = round(($alternatif[$i + 2] - $this->cmin[$i]) / ($this->cmax[$i] - $this->cmin[$i]), 3);
+				if ($this->cmax[$i] - $this->cmin[$i] == 0) {
+					$alternatif[$i + 2] = 0;
+				} else {
+					$alternatif[$i + 2] = round(($alternatif[$i + 2] - $this->cmin[$i]) / ($this->cmax[$i] - $this->cmin[$i]), 3);
+				}
 			}
 
 			array_push($this->utilitas, $alternatif);
+		}
+	}
+
+	function nilaiAkhir()
+	{
+		foreach ($this->utilitas as $utilitas) {
+			$total = 0;
+			for ($i = 0; $i < count($this->cmax); $i++) {
+				$utilitas[$i + 2] = round($utilitas[$i + 2] * $this->normalisasiBobot[$i][4], 3);
+				$total += $utilitas[$i + 2];
+			}
+
+			$utilitas[count($utilitas)] = round($total, 3);
+			array_push($this->nilaiAkhir, $utilitas);
 		}
 	}
 }

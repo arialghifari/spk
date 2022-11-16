@@ -68,15 +68,9 @@ $smart = new Smart();
 			foreach ($smart->alternatif as $alternatif) { ?>
 				<tr>
 					<td><?= $no ?></td>
-					<td><?= $alternatif[0] ?></td>
-					<td><?= $alternatif[1] ?></td>
-					<td><?= $alternatif[2] ?></td>
-					<td><?= $alternatif[3] ?></td>
-					<td><?= $alternatif[4] ?></td>
-					<td><?= $alternatif[5] ?></td>
-					<td><?= $alternatif[6] ?></td>
-					<td><?= $alternatif[7] ?></td>
-					<td><?= $alternatif[8] ?></td>
+					<?php for ($i = 0; $i <= count($smart->cmin) + 1; $i++) { ?>
+						<td><?= $alternatif[$i] ?></td>
+					<?php } ?>
 				</tr>
 			<?php $no++;
 			} ?>
@@ -147,19 +141,47 @@ $smart = new Smart();
 				<tr>
 					<td><?= $no ?></td>
 					<td><?= $utilitas[1] ?></td>
-					<td><?= $utilitas[2] ?></td>
-					<td><?= $utilitas[3] ?></td>
-					<td><?= $utilitas[4] ?></td>
-					<td><?= $utilitas[5] ?></td>
-					<td><?= $utilitas[6] ?></td>
-					<td><?= $utilitas[7] ?></td>
-					<td><?= $utilitas[8] ?></td>
+					<?php for ($i = 2; $i <= count($smart->cmin) + 1; $i++) { ?>
+						<td><?= $utilitas[$i] ?></td>
+					<?php } ?>
 				</tr>
 			<?php $no++;
 			} ?>
 		</tbody>
 	</table>
 
+	<!-- Nilai Akhir -->
+	<h2>Nilai Akhir</h2>
+	<table border="1">
+		<thead>
+			<tr>
+				<th>No</th>
+				<th>Kode</th>
+				<th>C1</th>
+				<th>C2</th>
+				<th>C3</th>
+				<th>C4</th>
+				<th>C5</th>
+				<th>C6</th>
+				<th>C7</th>
+				<th>Total</th>
+			</tr>
+		</thead>
+		<tbody>
+			<?php $no = 1;
+			foreach ($smart->nilaiAkhir as $nilaiAkhir) { ?>
+
+				<tr>
+					<td><?= $no ?></td>
+					<td><?= $nilaiAkhir[1] ?></td>
+					<?php for ($i = 1; $i <= count($smart->cmin) + 1; $i++) { ?>
+						<td><?= $nilaiAkhir[$i + 1] ?></td>
+					<?php } ?>
+				</tr>
+			<?php $no++;
+			} ?>
+		</tbody>
+	</table>
 </body>
 
 </html>

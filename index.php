@@ -80,11 +80,26 @@ $smart = new Smart();
 				</tr>
 			<?php $no++;
 			} ?>
+			<tr>
+				<td colspan="10"></td>
+			</tr>
+			<tr>
+				<td colspan="3">Cmin</td>
+				<?php foreach ($smart->cmin as $cmin) { ?>
+					<td><?= $cmin ?></td>
+				<?php } ?>
+			</tr>
+			<tr>
+				<td colspan="3">Cmax</td>
+				<?php foreach ($smart->cmax as $cmax) { ?>
+					<td><?= $cmax ?></td>
+				<?php } ?>
+			</tr>
 		</tbody>
 	</table>
 
-	<!-- 1 Normalisasi Bobot -->
-	<h2>1. Normalisasi Bobot</h2>
+	<!-- Normalisasi Bobot -->
+	<h2>Normalisasi Bobot</h2>
 	<table border="1">
 		<thead>
 			<tr>

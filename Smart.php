@@ -23,8 +23,12 @@ class Smart
 		array_push($this->alternatif, array('Lulu', 'A1', 100, 100, 100, 50, 50, 60, 50));
 		array_push($this->alternatif, array('Dhika', 'A2', 100, 100, 50, 25, 75, 100, 50));
 		array_push($this->alternatif, array('Asril', 'A3', 100, 50, 100, 25, 75, 80, 25));
+		array_push($this->alternatif, array('Demian', 'A4', 50, 50, 100, 50, 100, 40, 50));
+		array_push($this->alternatif, array('Ardhito', 'A5', 50, 100, 50, 25, 100, 20, 25));
 
 		$this->normalisasiBobot();
+		$this->cmin();
+		$this->cmax();
 	}
 
 	function totalBobotKriteria()
@@ -44,6 +48,32 @@ class Smart
 			$kriteria[4] = round($kriteria[2] / $this->totalBobotKriteria(), 3);
 
 			array_push($this->normalisasiBobot, $kriteria);
+		}
+	}
+
+	function cmin()
+	{
+		$this->cmin = array(100, 100, 100, 100, 100, 100, 100);
+
+		foreach ($this->alternatif as $alternatif) {
+			for ($i = 0; $i < count($this->cmin); $i++) {
+				if ($this->cmin[$i] > $alternatif[$i + 2]) {
+					$this->cmin[$i] = $alternatif[$i + 2];
+				}
+			}
+		}
+	}
+
+	function cmax()
+	{
+		$this->cmax = array(0, 0, 0, 0, 0, 0, 0);
+
+		foreach ($this->alternatif as $alternatif) {
+			for ($i = 0; $i < count($this->cmax); $i++) {
+				if ($this->cmax[$i] < $alternatif[$i + 2]) {
+					$this->cmax[$i] = $alternatif[$i + 2];
+				}
+			}
 		}
 	}
 }

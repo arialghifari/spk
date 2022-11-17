@@ -15,6 +15,7 @@ $smart = new Smart();
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>SPK PEMBERIAN KREDIT USAHA RAKYAT</title>
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
@@ -56,13 +57,12 @@ $smart = new Smart();
 					<th>No</th>
 					<th>Nama</th>
 					<th>Kode</th>
-					<th>C1</th>
-					<th>C2</th>
-					<th>C3</th>
-					<th>C4</th>
-					<th>C5</th>
-					<th>C6</th>
-					<th>C7</th>
+					<?php
+					if (count($smart->alternatif)) {
+						for ($i = 1; $i <= count($smart->alternatif[1]) - 2; $i++) { ?>
+							<th>C<?= $i ?></th>
+					<?php }
+					} ?>
 				</tr>
 			</thead>
 			<tbody>
@@ -76,9 +76,6 @@ $smart = new Smart();
 					</tr>
 				<?php $no++;
 				} ?>
-				<tr>
-					<td colspan="10"></td>
-				</tr>
 				<tr>
 					<td colspan="3">Cmin</td>
 					<?php foreach ($smart->cmin as $cmin) { ?>
@@ -128,13 +125,12 @@ $smart = new Smart();
 				<tr>
 					<th>No</th>
 					<th>Kode</th>
-					<th>C1</th>
-					<th>C2</th>
-					<th>C3</th>
-					<th>C4</th>
-					<th>C5</th>
-					<th>C6</th>
-					<th>C7</th>
+					<?php
+					if (count($smart->alternatif)) {
+						for ($i = 1; $i <= count($smart->alternatif[1]) - 2; $i++) { ?>
+							<th>C<?= $i ?></th>
+					<?php }
+					} ?>
 				</tr>
 			</thead>
 			<tbody>
@@ -159,14 +155,15 @@ $smart = new Smart();
 				<tr>
 					<th>No</th>
 					<th>Kode</th>
-					<th>C1</th>
-					<th>C2</th>
-					<th>C3</th>
-					<th>C4</th>
-					<th>C5</th>
-					<th>C6</th>
-					<th>C7</th>
+					<?php
+					if (count($smart->alternatif)) {
+						for ($i = 1; $i <= count($smart->alternatif[1]) - 2; $i++) { ?>
+							<th>C<?= $i ?></th>
+					<?php }
+					} ?>
 					<th>Total</th>
+					<th>Ranking</th>
+					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -179,13 +176,15 @@ $smart = new Smart();
 						<?php for ($i = 1; $i <= count($smart->cmin) + 1; $i++) { ?>
 							<td><?= $nilaiAkhir[$i + 1] ?></td>
 						<?php } ?>
+						<td><?= $no ?></td>
+						<td><?= $smart->cekKelayakan($nilaiAkhir[count($nilaiAkhir) - 1]) ?></td>
 					</tr>
 				<?php $no++;
 				} ?>
 			</tbody>
 		</table>
 	</div>
-	
+
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
 </body>
 

@@ -18,13 +18,15 @@ class Smart
 		array_push($this->kriteria, array('C3', 'PBB Agunan', 40, true));
 		array_push($this->kriteria, array('C4', 'NPWP', 20, true));
 		array_push($this->kriteria, array('C5', 'Usaha', 40, true));
+		array_push($this->kriteria, array('C6', 'Penghasilan', 50, true));
+		array_push($this->kriteria, array('C7', 'Surat Keterangan Tidak Silang Sengketa', 20, true));
 
 		// Data Alternatif
-		array_push($this->alternatif, array('Lulu', 'A1', 100, 100, 100, 50, 50));
-		array_push($this->alternatif, array('Dhika', 'A2', 100, 100, 50, 25, 75));
-		array_push($this->alternatif, array('Asril', 'A3', 100, 50, 100, 25, 75));
-		array_push($this->alternatif, array('Demian', 'A4', 50, 50, 100, 50, 100));
-		array_push($this->alternatif, array('Ardhito', 'A5', 50, 100, 50, 25, 100));
+		array_push($this->alternatif, array('Lulu', 'A1', 100, 100, 100, 50, 50, 60, 50));
+		array_push($this->alternatif, array('Dhika', 'A2', 100, 100, 50, 25, 75, 100, 50));
+		array_push($this->alternatif, array('Asril', 'A3', 100, 50, 100, 25, 75, 80, 25));
+		array_push($this->alternatif, array('Demian', 'A4', 50, 50, 100, 50, 100, 40, 50));
+		array_push($this->alternatif, array('Ardhito', 'A5', 50, 100, 50, 25, 100, 20, 25));
 
 		$this->normalisasiBobot();
 		$this->cmin();
@@ -47,6 +49,7 @@ class Smart
 	function normalisasiBobot()
 	{
 		foreach ($this->kriteria as $kriteria) {
+			// Normalisasi Bobot: bobotKriteria / sumBobotKriteria
 			$kriteria[4] = round($kriteria[2] / $this->totalBobotKriteria(), 3);
 
 			array_push($this->normalisasiBobot, $kriteria);
@@ -97,9 +100,11 @@ class Smart
 				if ($this->cmax[$i] - $this->cmin[$i] == 0) {
 					$alternatif[$i + 2] = 0;
 				} else {
-					if ($alternatif[3]) {
+					if ($this->kriteria[$i][3]) {
+						// Benefit: (Ci - Cmin) / (Cmax - Cmin)
 						$alternatif[$i + 2] = round(($alternatif[$i + 2] - $this->cmin[$i]) / ($this->cmax[$i] - $this->cmin[$i]), 3);
 					} else {
+						// Cost: (Cmax - Ci) / (Cmax - Cmin)
 						$alternatif[$i + 2] = round(($this->cmax[$i] - $alternatif[$i + 2]) / ($this->cmax[$i] - $this->cmin[$i]), 3);
 					}
 				}
@@ -114,12 +119,28 @@ class Smart
 		foreach ($this->utilitas as $utilitas) {
 			$total = 0;
 			for ($i = 0; $i < count($this->cmax); $i++) {
+				// Nilai Akhir: nilaiUtilitas * bobotUtilitas
 				$utilitas[$i + 2] = round($utilitas[$i + 2] * $this->normalisasiBobot[$i][4], 3);
+				// Total: sumNilaiAkhir
 				$total += $utilitas[$i + 2];
 			}
 
 			$utilitas[count($utilitas)] = round($total, 3);
 			array_push($this->nilaiAkhir, $utilitas);
+
+			// Perangkingan
+			usort($this->nilaiAkhir, function ($a, $b) {
+				return $b[9] <=> $a[9];
+			});
+		}
+	}
+
+	function cekKelayakan($bobot)
+	{
+		if ($bobot >= 0.65) {
+			return "Layak";
+		} else {
+			return "Tidak Layak";
 		}
 	}
 }

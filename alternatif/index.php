@@ -31,14 +31,17 @@ $smart = new Smart();
 		<div class="row m-0">
 			<div class="col-12 col-md-2 m-0 bg-light py-4">
 				<div class="d-flex flex-column gap-2">
-				<a class="border-bottom text-decoration-none py-2" href="../">Home</a>
+					<a class="border-bottom text-decoration-none py-2" href="../">Home</a>
 					<a class="border-bottom text-decoration-none py-2" href="../kriteria">Kriteria</a>
 					<a class="border-bottom text-decoration-none py-2" href="./">Alternatif</a>
 				</div>
 			</div>
 
 			<div class="col-12 col-md-10 m-0 mb-4 px-4">
-				<h2 class="mt-4 mb-3 fs-4">Data Alternatif</h2>
+				<div class="d-flex align-items-center">
+					<h2 class="mt-4 mb-3 fs-4">Data Alternatif</h2>
+					<a href="tambah.php" class="btn btn-primary">Tambah Alternatif</a>
+				</div>
 				<div class="table-responsive">
 					<table class="table">
 						<thead>

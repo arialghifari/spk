@@ -19,6 +19,14 @@ $smart = new Smart();
 </head>
 
 <body>
+	<header>
+		<nav class="navbar bg-light">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="../">SPK KREDIT USAHA RAKYAT</a>
+			</div>
+		</nav>
+	</header>
+
 	<main>
 		<div class="row m-0">
 			<div class="col-12 col-md-2 m-0 bg-light py-4 vh-100">
@@ -29,45 +37,40 @@ $smart = new Smart();
 				</div>
 			</div>
 
-			<div class="col-12 col-md-10 m-0 p-0 mb-4">
-				<nav class="navbar bg-light px-4">
-					<a class="navbar-brand" href="../">SPK KREDIT USAHA RAKYAT</a>
-				</nav>
-
-				<div class="px-4">
-					<h2 class="mt-4 mb-3 fs-4">Kriteria dan Bobot</h2>
-					<div class="table-responsive">
-						<table class="table">
-							<thead>
+			<div class="col-12 col-md-10 m-0 mb-4 px-4">
+				<h2 class="mt-4 mb-3 fs-4">Kriteria dan Bobot</h2>
+				<div class="table-responsive">
+					<table class="table">
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Kode</th>
+								<th>Kriteria</th>
+								<th>Bobot</th>
+							</tr>
+						</thead>
+						<tbody>
+							<?php
+							$no = 1;
+							foreach ($smart->kriteria as $kriteria) {
+							?>
 								<tr>
-									<th>No</th>
-									<th>Kode</th>
-									<th>Kriteria</th>
-									<th>Bobot</th>
+									<td><?= $no ?></td>
+									<td><?= $kriteria[1]; ?></td>
+									<td><?= $kriteria[2]; ?></td>
+									<td><?= $kriteria[3]; ?></td>
 								</tr>
-							</thead>
-							<tbody>
-								<?php
-								$no = 1;
-								foreach ($smart->kriteria as $kriteria) {
-								?>
-									<tr>
-										<td><?= $no ?></td>
-										<td><?= $kriteria[1]; ?></td>
-										<td><?= $kriteria[2]; ?></td>
-										<td><?= $kriteria[3]; ?></td>
-									</tr>
-								<?php $no++;
-								} ?>
-								<tr>
-									<td colspan="3">Total</td>
-									<td><?= $smart->totalBobotKriteria(); ?></td>
-								</tr>
-							</tbody>
-						</table>
-					</div>
+							<?php $no++;
+							} ?>
+							<tr>
+								<td colspan="3">Total</td>
+								<td><?= $smart->totalBobotKriteria(); ?></td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
+		</div>
 	</main>
 
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>

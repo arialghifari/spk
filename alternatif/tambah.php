@@ -39,67 +39,67 @@
 					</div>
 
 					<div class="input-group">
-						<label for="namaLengkap" class="w-100 mb-1">Nama Pemohon</label>
-						<input type="text" id="namaLengkap" name="namaLengkap" class="form-control">
+						<label for="namaPemohon" class="w-100 mb-1">Nama Pemohon</label>
+						<input type="text" id="namaPemohon" name="namaPemohon" class="form-control">
 					</div>
 
 					<div class="input-group">
 						<label for="dokumenLegalitasPemohon" class="w-100 mb-1">C1: Dokumen Legalitas Pemohon</label>
 						<select name="dokumenLegalitasPemohon" id="dokumenLegalitasPemohon" class="form-select">
-							<option value="100">Lengkap</option>
-							<option value="50">Tidak Lengkap</option>
+							<option value="100">Lengkap (100)</option>
+							<option value="50">Tidak Lengkap (50)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="suratTanahAgunan" class="w-100 mb-1">C2: Surat Tanah Agunan</label>
 						<select name="suratTanahAgunan" id="suratTanahAgunan" class="form-select">
-							<option value="100">Sertifikat Hak Milik</option>
-							<option value="50">Surat Keterangan Tanah Yang Dilegalisir Camat</option>
+							<option value="100">Sertifikat Hak Milik (100)</option>
+							<option value="50">Surat Keterangan Tanah Yang Dilegalisir Camat (50)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="pbbAgunan" class="w-100 mb-1">C3: PBB Agunan</label>
 						<select name="pbbAgunan" id="pbbAgunan" class="form-select">
-							<option value="100">Besar</option>
-							<option value="50">Kecil</option>
+							<option value="100">Besar (100)</option>
+							<option value="50">Kecil (50)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="npwp" class="w-100 mb-1">C4: NPWP</label>
 						<select name="npwp" id="npwp" class="form-select">
-							<option value="50">Ada</option>
-							<option value="25">Tidak Ada</option>
+							<option value="50">Ada (50)</option>
+							<option value="25">Tidak Ada (25)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="usaha" class="w-100 mb-1">C5: Usaha</label>
 						<select name="usaha" id="usaha" class="form-select">
-							<option value="100">Menengah</option>
-							<option value="75">Kecil</option>
-							<option value="50">Mikro</option>
+							<option value="100">Menengah (100)</option>
+							<option value="75">Kecil (75)</option>
+							<option value="50">Mikro (50)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="penghasilan" class="w-100 mb-1">C6: Penghasilan</label>
 						<select name="penghasilan" id="penghasilan" class="form-select">
-							<option value="100">> 5 Juta</option>
-							<option value="80">> 4 Juta – 5 Juta</option>
-							<option value="60">> 3 Juta – 4 Juta</option>
-							<option value="40">> 2 Juta – 3 Juta</option>
-							<option value="20">0 – 2 Juta</option>
+							<option value="100">> 5 Juta (100)</option>
+							<option value="80">> 4 Juta – 5 Juta (80)</option>
+							<option value="60">> 3 Juta – 4 Juta (60)</option>
+							<option value="40">> 2 Juta – 3 Juta (40)</option>
+							<option value="20">0 – 2 Juta (20)</option>
 						</select>
 					</div>
 
 					<div class="input-group">
 						<label for="skTidakSilangSengketa" class="w-100 mb-1">C7: SK Tidak Silang Sengketa</label>
 						<select name="skTidakSilangSengketa" id="skTidakSilangSengketa" class="form-select">
-							<option value="50">Ada</option>
-							<option value="25">Tidak Ada</option>
+							<option value="50">Ada (50)</option>
+							<option value="25">Tidak Ada (25)</option>
 						</select>
 					</div>
 

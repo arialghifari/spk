@@ -42,10 +42,10 @@ $data = mysqli_fetch_array($query);
 			</div>
 
 			<div class="col-12 col-md-10 m-0 mb-4 px-4">
-				<h2 class="mt-4 mb-3 fs-4">Tambah Alternatif</h2>
+				<h2 class="mt-4 mb-3 fs-4">Update Alternatif</h2>
 
 				<form method="post" action="prosesUpdate.php" class="d-flex flex-column gap-3">
-					<input type="text" name="id" class="form-control" value="<?= $data[0] ?>" disabled>
+					<input type="hidden" name="id" class="form-control" value="<?= $data[0] ?>">
 
 					<div class="input-group">
 						<label for="kodeAlternatif" class="w-100 mb-1">Kode Alternatif</label>
@@ -117,7 +117,7 @@ $data = mysqli_fetch_array($query);
 						</select>
 					</div>
 
-					<button type="submit" class="btn btn-primary">Tambah Alternatif</button>
+					<button type="submit" class="btn btn-primary">Update Alternatif</button>
 				</form>
 			</div>
 		</div>

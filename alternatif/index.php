@@ -56,6 +56,7 @@ $smart = new Smart();
 								<th>C5</th>
 								<th>C6</th>
 								<th>C7</th>
+								<th>Aksi</th>
 							</tr>
 						</thead>
 						<tbody>
@@ -68,6 +69,7 @@ $smart = new Smart();
 									<?php for ($i = 0; $i < 7; $i++) { ?>
 										<td><?= $alternatif[$i + 3] ?></td>
 									<?php } ?>
+									<td><a href="./edit.php?id=<?= $alternatif[0] ?>">Edit</a> | <a href="./prosesHapus.php?id=<?= $alternatif[0] ?>">Hapus</a> </td>
 								</tr>
 							<?php $no++;
 							} ?>

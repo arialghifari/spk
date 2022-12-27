@@ -2,8 +2,6 @@
 
 include '../connection.php';
 
-print_r($_POST);
-
 $id = $_POST['id'];
 $kodeAlternatif = $_POST['kodeAlternatif'];
 $namaPemohon = $_POST['namaPemohon'];

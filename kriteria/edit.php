@@ -1,8 +1,12 @@
 <?php
 
-include '../Smart.php';
+include '../connection.php';
 
-$smart = new Smart();
+$id = $_GET['id'];
+
+$sql = "SELECT * FROM kriteria WHERE id='$id'";
+$query = mysqli_query($conn, $sql);
+$data = mysqli_fetch_array($query);
 
 ?>
 
@@ -33,41 +37,23 @@ $smart = new Smart();
 	</nav>
 
 	<main class="flex w-full h-fit">
-		<div class="m-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md w-full">
-			<h2 class="font-semibold text-xl">Kriteria dan Bobot</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>No</th>
-						<th>Kode</th>
-						<th>Kriteria</th>
-						<th>Tipe</th>
-						<th>Bobot</th>
-						<th>Aksi</th>
-					</tr>
-				</thead>
-				<tbody>
-					<?php
-					$no = 1;
-					foreach ($smart->kriteria as $kriteria) {
-					?>
-						<tr>
-							<td><?= $no ?></td>
-							<td><?= $kriteria[1]; ?></td>
-							<td><?= $kriteria[2]; ?></td>
-							<td><?= $kriteria[4] == '1' ? "Benefit" : "Cost" ?></td>
-							<td><?= $kriteria[3]; ?></td>
-							<td class="text-center"><a href="./edit.php?id=<?= $kriteria[0] ?>" title="Edit <?= $kriteria[2] ?>"><img class="bg-blue-600 hover:bg-blue-700 p-1 rounded" src="../assets/ic_edit.svg" alt="icon edit"></a></td>
-						</tr>
-					<?php $no++;
-					} ?>
-					<tr>
-						<td colspan="4" class="font-bold">Total</td>
-						<td colspan="2" class="font-bold"><?= $smart->totalBobotKriteria(); ?></td>
-					</tr>
-				</tbody>
-			</table>
-		</div>
+		<form action="prosesUpdate.php" method="post" class="m-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md w-full">
+			<h2 class="font-semibold text-xl">Edit Bobot</h2>
+
+			<input type="hidden" name="id" value="<?= $data[0] ?>">
+
+			<div class="form-control">
+				<label for="namaKriteria">Nama Kriteria</label>
+				<input type="text" id="namaKriteria" name="namaKriteria" value="<?= $data[2] ?>" disabled>
+			</div>
+
+			<div class="form-control">
+				<label for="bobot">Bobot</label>
+				<input type="text" id="bobot" name="bobot" value="<?= $data[3] ?>">
+			</div>
+
+			<button type="submit" class="bg-blue-600 hover:bg-blue-700 mt-4 p-2 rounded text-white">Update</button>
+		</form>
 	</main>
 
 </body>

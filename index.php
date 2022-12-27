@@ -1,11 +1,3 @@
-<?php
-
-include './Smart.php';
-
-$smart = new Smart();
-
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,19 +12,20 @@ $smart = new Smart();
 
 <body class="bg-zinc-200 flex">
 	<nav class="flex flex-col w-80 bg-zinc-800 h-screen gap-8 sticky top-0">
-		<div class=" text-center py-5 text-white border-b-2 border-zinc-700">
-			<a href="./" class="text-lg font-bold tracking-widest">SPK</a>
+		<div class=" text-center py-4 text-white border-b-2 border-zinc-700">
+			<a href="./" class="text-xl font-bold tracking-widest">SPK</a>
+			<p class="text-sm">Kredit Usaha Rakyat</p>
 		</div>
 
 		<div class="flex flex-col gap-4 text-zinc-100 mx-6">
-			<a class="py-2 px-4 rounded active" href="./">Home</a>
-			<a class="py-2 px-4 hover:bg-zinc-700 rounded" href="./kriteria">Kriteria</a>
-			<a class="py-2 px-4 hover:bg-zinc-700 rounded" href="./alternatif">Alternatif</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center active" href="./"><img src="./assets/ic_home.svg" alt="icon home"> Home</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./kriteria"><img src="./assets/ic_clipboard.svg" alt="icon kriteria"> Kriteria</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./alternatif"><img src="./assets/ic_user.svg" alt="icon alternatif"> Alternatif</a>
 		</div>
 	</nav>
 
 	<main class="flex w-full h-fit">
-		<div class="m-8 bg-zinc-50 p-6 rounded flex flex-col gap-4 shadow-md">
+		<div class="m-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md w-full">
 			<h2 class="font-semibold text-xl">SIMPLE MULTI-ATTRIBUTE RATING TECHNIQUE (SMART)</h2>
 			<p>Simple multi-attribute rating technique (SMART) adalah sebuah teknik yang digunakan untuk menilai atau mengevaluasi sebuah proyek atau alternatif yang memiliki beberapa atribut atau kriteria. Teknik ini memfokuskan pada pemberian nilai terhadap setiap atribut atau kriteria yang dianggap penting untuk menentukan keberhasilan dari proyek atau alternatif tersebut.</p>
 			<p>SMART merupakan versi yang lebih sederhana dari metode multi-attribute decision making (MADM), dimana teknik ini hanya mengacu pada beberapa atribut atau kriteria saja yang dianggap paling penting, sementara MADM mengacu pada semua atribut atau kriteria yang terkait dengan proyek atau alternatif tersebut.</p>

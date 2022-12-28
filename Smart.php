@@ -6,6 +6,7 @@ class Smart
 {
 	public $kriteria = array();
 	public $alternatif = array();
+	public $normalisasiAlternatif = array();
 	public $normalisasiBobot = array();
 	public $cmin = array();
 	public $cmax = array();
@@ -29,6 +30,7 @@ class Smart
 			array_push($this->alternatif, array($row["id"], $row["kode"], $row["nama"], $row['C1'], $row['C2'], $row['C3'], $row['C4'], $row['C5'], $row['C6'], $row['C7']));
 		};
 
+		$this->normalisasiAlternatif();
 		$this->normalisasiBobot();
 		$this->cmin();
 		$this->cmax();
@@ -72,7 +74,7 @@ class Smart
 	{
 		$this->cmin = $this->setDynamicArray(count($this->kriteria), 100);
 
-		foreach ($this->alternatif as $alternatif) {
+		foreach ($this->normalisasiAlternatif as $alternatif) {
 			for ($i = 0; $i < 7; $i++) {
 				if ($this->cmin[$i] > $alternatif[$i + 3]) {
 					$this->cmin[$i] = $alternatif[$i + 3];
@@ -85,7 +87,7 @@ class Smart
 	{
 		$this->cmax = $this->setDynamicArray(count($this->kriteria), 0);
 
-		foreach ($this->alternatif as $alternatif) {
+		foreach ($this->normalisasiAlternatif as $alternatif) {
 			for ($i = 0; $i < 7; $i++) {
 				if ($this->cmax[$i] < $alternatif[$i + 3]) {
 					$this->cmax[$i] = $alternatif[$i + 3];
@@ -94,9 +96,35 @@ class Smart
 		}
 	}
 
+	function normalisasiAlternatif()
+	{
+		$nilaiPembagi = array();
+
+		// Pangkatkan tiap kriteria alternatif
+		foreach ($this->alternatif as $alternatif) {
+			for ($i = 0; $i < 7; $i++) {
+				@$nilaiPembagi[$i] += pow($alternatif[$i + 3], 2);
+			}
+		}
+
+		// Akar kuadratkan tiap kriteria alternatif
+		for ($i = 0; $i < 7; $i++) {
+			@$nilaiPembagi[$i] = round(sqrt($nilaiPembagi[$i]), 3);
+		}
+
+		// Tiap
+		foreach ($this->alternatif as $alternatif) {
+			for ($i = 0; $i < 7; $i++) {
+				@$alternatif[$i + 3] = round($alternatif[$i + 3] / $nilaiPembagi[$i], 3);
+			}
+
+			array_push($this->normalisasiAlternatif, $alternatif);
+		}
+	}
+
 	function utilitas()
 	{
-		foreach ($this->alternatif as $alternatif) {
+		foreach ($this->normalisasiAlternatif as $alternatif) {
 			for ($i = 0; $i < 7; $i++) {
 				if ($this->cmax[$i] - $this->cmin[$i] == 0) {
 					$alternatif[$i + 3] = 0;
@@ -117,7 +145,7 @@ class Smart
 
 	function nilaiAkhir()
 	{
-		foreach ($this->utilitas as $utilitas) {
+		foreach ($this->normalisasiAlternatif as $utilitas) {
 			$total = 0;
 			for ($i = 0; $i < 7; $i++) {
 				// Nilai Akhir: nilaiUtilitas * bobotUtilitas

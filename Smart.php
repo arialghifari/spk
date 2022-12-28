@@ -145,7 +145,7 @@ class Smart
 
 	function nilaiAkhir()
 	{
-		foreach ($this->normalisasiAlternatif as $utilitas) {
+		foreach ($this->utilitas as $utilitas) {
 			$total = 0;
 			for ($i = 0; $i < 7; $i++) {
 				// Nilai Akhir: nilaiUtilitas * bobotUtilitas

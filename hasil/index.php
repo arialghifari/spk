@@ -99,18 +99,6 @@ $smart = new Smart();
 						</tr>
 					<?php $no++;
 					} ?>
-					<tr>
-						<td colspan="3">Cmin</td>
-						<?php foreach ($smart->cmin as $cmin) { ?>
-							<td><?= $cmin ?></td>
-						<?php } ?>
-					</tr>
-					<tr>
-						<td colspan="3">Cmax</td>
-						<?php foreach ($smart->cmax as $cmax) { ?>
-							<td><?= $cmax ?></td>
-						<?php } ?>
-					</tr>
 				</tbody>
 			</table>
 		</div>
@@ -141,6 +129,54 @@ $smart = new Smart();
 						</tr>
 					<?php $no++;
 					} ?>
+				</tbody>
+			</table>
+		</div>
+
+		<!-- Normalisasi Alternatif -->
+		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
+			<h2 class="font-semibold text-xl mb-2">Normalisasi Alternatif</h2>
+
+			<table>
+				<thead>
+					<tr>
+						<th>No</th>
+						<th>Kode</th>
+						<th>Nama</th>
+						<th>C1</th>
+						<th>C2</th>
+						<th>C3</th>
+						<th>C4</th>
+						<th>C5</th>
+						<th>C6</th>
+						<th>C7</th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php $no = 1;
+					foreach ($smart->normalisasiAlternatif as $alternatif) { ?>
+						<tr>
+							<td><?= $no ?></td>
+							<td><?= $alternatif[1] ?></td>
+							<td><?= $alternatif[2] ?></td>
+							<?php for ($i = 0; $i < 7; $i++) { ?>
+								<td><?= $alternatif[$i + 3] ?></td>
+							<?php } ?>
+						</tr>
+					<?php $no++;
+					} ?>
+					<tr>
+						<td colspan="3">Cmin</td>
+						<?php foreach ($smart->cmin as $cmin) { ?>
+							<td><?= $cmin ?></td>
+						<?php } ?>
+					</tr>
+					<tr>
+						<td colspan="3">Cmax</td>
+						<?php foreach ($smart->cmax as $cmax) { ?>
+							<td><?= $cmax ?></td>
+						<?php } ?>
+					</tr>
 				</tbody>
 			</table>
 		</div>

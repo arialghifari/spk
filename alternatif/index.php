@@ -75,20 +75,6 @@ $smart = new Smart();
 						</tr>
 					<?php $no++;
 					} ?>
-					<tr>
-						<td colspan="3">Cmin</td>
-						<?php foreach ($smart->cmin as $cmin) { ?>
-							<td><?= $cmin ?></td>
-						<?php } ?>
-						<td></td>
-					</tr>
-					<tr>
-						<td colspan="3">Cmax</td>
-						<?php foreach ($smart->cmax as $cmax) { ?>
-							<td><?= $cmax ?></td>
-						<?php } ?>
-						<td></td>
-					</tr>
 				</tbody>
 			</table>
 

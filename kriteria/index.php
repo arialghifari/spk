@@ -34,7 +34,7 @@ $smart = new Smart();
 
 	<main class="flex w-full h-fit">
 		<div class="m-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md w-full">
-			<h2 class="font-semibold text-xl">Kriteria dan Bobot</h2>
+			<h2 class="font-semibold text-xl mb-2">Kriteria dan Bobot</h2>
 			<table>
 				<thead>
 					<tr>
@@ -57,13 +57,17 @@ $smart = new Smart();
 							<td><?= $kriteria[2]; ?></td>
 							<td><?= $kriteria[4] == '1' ? "Benefit" : "Cost" ?></td>
 							<td><?= $kriteria[3]; ?></td>
-							<td class="text-center"><a href="./edit.php?id=<?= $kriteria[0] ?>" title="Edit <?= $kriteria[2] ?>"><img class="bg-blue-600 hover:bg-blue-700 p-1 rounded" src="../assets/ic_edit.svg" alt="icon edit"></a></td>
+							<td>
+								<a class="flex w-fit" href="./edit.php?id=<?= $kriteria[0] ?>" title="Edit <?= $kriteria[2] ?>">
+									<img class="bg-blue-400 hover:bg-blue-700 p-1 rounded" src="../assets/ic_edit.svg" alt="icon edit">
+								</a>
+							</td>
 						</tr>
 					<?php $no++;
 					} ?>
 					<tr>
-						<td colspan="4" class="font-bold">Total</td>
-						<td colspan="2" class="font-bold"><?= $smart->totalBobotKriteria(); ?></td>
+						<td colspan="4">Total</td>
+						<td colspan="2"><?= $smart->totalBobotKriteria(); ?></td>
 					</tr>
 				</tbody>
 			</table>

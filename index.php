@@ -24,13 +24,23 @@
 		</div>
 	</nav>
 
-	<main class="flex w-full h-fit">
-		<div class="m-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md w-full">
-			<h2 class="font-semibold text-xl">SIMPLE MULTI-ATTRIBUTE RATING TECHNIQUE (SMART)</h2>
+	<main class="flex flex-col w-full h-fit my-8 gap-8">
+		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
+			<h2 class="font-semibold text-xl">Sistem Pendukung Keputusan (SPK)</h2>
+			<p>Sistem Pendukung Keputusan (SPK) adalah sebuah sistem yang dibuat untuk membantu dan memudahkan proses pengambilan keputusan dengan menggunakan metode-metode tertentu, seperti analisis data, algoritma, atau teknik lainnya. SPK biasanya digunakan dalam situasi dimana terdapat banyak alternatif yang perlu dipertimbangkan, atau dimana proses pengambilan keputusan harus dilakukan dengan cepat dan tepat.</p>
+			<p>SPK dapat membantu dalam mengelola data yang banyak dan kompleks, serta menyediakan informasi yang berguna bagi pengambilan keputusan. SPK juga dapat membantu mengurangi subyektivitas dan bias pribadi dalam proses pengambilan keputusan, karena keputusan yang diambil berdasarkan data yang telah dianalisis dengan metode yang terstruktur.</p>
+		</div>
+		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
+			<h2 class="font-semibold text-xl">Metode Simple Multi-Attribute Rating Technique (SMART)</h2>
 			<p>Simple multi-attribute rating technique (SMART) adalah sebuah teknik yang digunakan untuk menilai atau mengevaluasi sebuah proyek atau alternatif yang memiliki beberapa atribut atau kriteria. Teknik ini memfokuskan pada pemberian nilai terhadap setiap atribut atau kriteria yang dianggap penting untuk menentukan keberhasilan dari proyek atau alternatif tersebut.</p>
 			<p>SMART merupakan versi yang lebih sederhana dari metode multi-attribute decision making (MADM), dimana teknik ini hanya mengacu pada beberapa atribut atau kriteria saja yang dianggap paling penting, sementara MADM mengacu pada semua atribut atau kriteria yang terkait dengan proyek atau alternatif tersebut.</p>
 			<p>Untuk menilai proyek atau alternatif menggunakan SMART, pertama-tama harus ditentukan atribut atau kriteria yang akan dijadikan acuan. Kemudian, setiap atribut atau kriteria tersebut diberi nilai dengan menggunakan skala yang sesuai, misalnya skala 1 hingga 5 atau A hingga E. Setelah itu, nilai yang telah diberikan tersebut dikali dengan bobot atribut atau kriteria tersebut, yang menunjukkan tingkat pentingnya atribut atau kriteria tersebut dalam menentukan keberhasilan proyek atau alternatif. Nilai yang diperoleh setelah dikalikan dengan bobot tersebut kemudian dijumlahkan untuk mendapatkan nilai akhir proyek atau alternatif tersebut.</p>
-			<p>SMART dapat digunakan dalam berbagai situasi, seperti dalam proses perencanaan proyek, pemilihan alternatif investasi, atau dalam proses pemilihan vendor. Teknik ini dapat membantu mempermudah proses pengambilan keputusan karena memfokuskan pada atribut atau kriteria yang dianggap paling penting, sehingga mengurangi kebingungan dan mempermudah pemahaman terhadap alternatif yang ada.</p>
+			<p>SMART dapat digunakan dalam berbagai situasi, seperti dalam pemilihan alternatif penerima kredit usaha rakyat, proses perencanaan proyek, pemilihan alternatif investasi, atau dalam proses pemilihan vendor. Teknik ini dapat membantu mempermudah proses pengambilan keputusan karena memfokuskan pada atribut atau kriteria yang dianggap paling penting, sehingga mengurangi kebingungan dan mempermudah pemahaman terhadap alternatif yang ada.</p>
+		</div>
+		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
+			<h2 class="font-semibold text-xl">SPK Kredit Usaha Rakyat</h2>
+			<p>Sistem Pendukung Keputusan Kredit Usaha Rakyat (SPK KUR) dibangun dengan tujuan untuk membantu mempercepat pengolahan data yang berkaitan dengan permohonan Kredit Usaha Rakyat (KUR) di Bank. SPK KUR ini akan membantu dalam mengelola data yang banyak dan kompleks yang terkait dengan permohonan KUR, serta menyediakan informasi yang berguna bagi pengambilan keputusan terkait dengan pemberian KUR. Dengan adanya SPK KUR ini, diharapkan proses pengambilan keputusan terkait dengan pemberian KUR dapat dilakukan dengan lebih cepat dan tepat, serta dapat mengurangi subyektivitas dan bias pribadi dalam proses tersebut.</p>
+			<p>Sistem Pendukung Keputusan (SPK) ini dibangun dengan menggunakan metode Simple Multi-Attribute Rating Technique (SMART), karena metode ini sesuai dengan karakteristik dari SPK yang akan dibangun. Metode SMART memiliki keunggulan dalam mengelola multi atribut dalam setiap kriterianya, dengan nilai yang telah ditentukan sebelumnya. Dengan menggunakan metode SMART, SPK ini dapat mengelola data yang banyak dan kompleks dengan lebih efektif dan efisien, serta menyediakan informasi yang berguna bagi pengambilan keputusan yang akan dilakukan. Selain itu, metode SMART juga dapat membantu mengurangi subyektivitas dan bias pribadi dalam proses pengambilan keputusan, karena keputusan yang diambil berdasarkan data yang telah dianalisis dengan metode yang terstruktur.</p>
 		</div>
 	</main>
 

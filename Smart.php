@@ -38,6 +38,17 @@ class Smart
 		$this->nilaiAkhir();
 	}
 
+	function setDynamicArray($length, $value)
+	{
+		$array = array();
+
+		for ($i = 1; $i <= $length; $i++) {
+			array_push($array, $value);
+		}
+
+		return $array;
+	}
+
 	function totalBobotKriteria()
 	{
 		$total = 0;
@@ -57,17 +68,6 @@ class Smart
 
 			array_push($this->normalisasiBobot, $kriteria);
 		}
-	}
-
-	function setDynamicArray($length, $value)
-	{
-		$array = array();
-
-		for ($i = 1; $i <= $length; $i++) {
-			array_push($array, $value);
-		}
-
-		return $array;
 	}
 
 	function cmin()
@@ -112,7 +112,7 @@ class Smart
 			@$nilaiPembagi[$i] = round(sqrt($nilaiPembagi[$i]), 3);
 		}
 
-		// Tiap
+		// Tiap alternatif dibagi nilaiPembagi tiap kriteria
 		foreach ($this->alternatif as $alternatif) {
 			for ($i = 0; $i < 7; $i++) {
 				@$alternatif[$i + 3] = round($alternatif[$i + 3] / $nilaiPembagi[$i], 3);
@@ -166,10 +166,6 @@ class Smart
 
 	function cekKelayakan($bobot)
 	{
-		if ($bobot >= $this->bobotMinimal) {
-			return "Layak";
-		} else {
-			return "Tidak Layak";
-		}
+		return ($bobot >= $this->bobotMinimal) ? true : false;
 	}
 }

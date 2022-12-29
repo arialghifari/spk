@@ -93,9 +93,15 @@ $smart = new Smart();
 							<td><?= $no ?></td>
 							<td><?= $alternatif[1] ?></td>
 							<td><?= $alternatif[2] ?></td>
-							<?php for ($i = 0; $i < 7; $i++) { ?>
-								<td><?= $alternatif[$i + 3] ?></td>
-							<?php } ?>
+							
+							<!-- Kriteria -->
+							<td><?= $alternatif[3] ?></td>
+							<td><?= $alternatif[4] ?></td>
+							<td><?= $alternatif[5] ?></td>
+							<td><?= $alternatif[6] ?></td>
+							<td><?= $alternatif[7] ?></td>
+							<td><?= $alternatif[8] ?></td>
+							<td><?= $alternatif[9] ?></td>
 						</tr>
 					<?php $no++;
 					} ?>
@@ -103,9 +109,9 @@ $smart = new Smart();
 			</table>
 		</div>
 
-		<!-- Normalisasi Bobot -->
+		<!-- Normalisasi Bobot Kriteria -->
 		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
-			<h2 class="font-semibold text-xl mb-2">Normalisasi Bobot</h2>
+			<h2 class="font-semibold text-xl mb-2">Normalisasi Bobot Kriteria</h2>
 
 			<table>
 				<thead>
@@ -159,9 +165,15 @@ $smart = new Smart();
 							<td><?= $no ?></td>
 							<td><?= $alternatif[1] ?></td>
 							<td><?= $alternatif[2] ?></td>
-							<?php for ($i = 0; $i < 7; $i++) { ?>
-								<td><?= $alternatif[$i + 3] ?></td>
-							<?php } ?>
+							
+							<!-- Kriteria -->
+							<td><?= $alternatif[3] ?></td>
+							<td><?= $alternatif[4] ?></td>
+							<td><?= $alternatif[5] ?></td>
+							<td><?= $alternatif[6] ?></td>
+							<td><?= $alternatif[7] ?></td>
+							<td><?= $alternatif[8] ?></td>
+							<td><?= $alternatif[9] ?></td>
 						</tr>
 					<?php $no++;
 					} ?>
@@ -205,9 +217,15 @@ $smart = new Smart();
 						<tr>
 							<td><?= $no ?></td>
 							<td><?= $utilitas[1] ?></td>
-							<?php for ($i = 0; $i < 7; $i++) { ?>
-								<td><?= $utilitas[$i + 3] ?></td>
-							<?php } ?>
+
+							<!-- Kriteria -->
+							<td><?= $utilitas[3] ?></td>
+							<td><?= $utilitas[4] ?></td>
+							<td><?= $utilitas[5] ?></td>
+							<td><?= $utilitas[6] ?></td>
+							<td><?= $utilitas[7] ?></td>
+							<td><?= $utilitas[8] ?></td>
+							<td><?= $utilitas[9] ?></td>
 						</tr>
 					<?php $no++;
 					} ?>
@@ -223,6 +241,7 @@ $smart = new Smart();
 				<thead>
 					<tr>
 						<th>Kode</th>
+						<th>Nama</th>
 						<th>C1</th>
 						<th>C2</th>
 						<th>C3</th>
@@ -238,14 +257,22 @@ $smart = new Smart();
 				<tbody>
 					<?php $rank = 1;
 					foreach ($smart->nilaiAkhir as $nilaiAkhir) { ?>
-						<tr class="<?= $smart->cekKelayakan($nilaiAkhir[count($nilaiAkhir) - 1]) == 'Layak' ? 'layak' : 'tidakLayak' ?>">
+						<tr class="<?= $smart->cekKelayakan($nilaiAkhir[count($nilaiAkhir) - 1]) ? 'layak' : 'tidakLayak' ?>">
 							<td><?= $nilaiAkhir[1] ?></td>
-							<?php for ($i = 0; $i < 7; $i++) { ?>
-								<td><?= $nilaiAkhir[$i + 3] ?></td>
-							<?php } ?>
+							<td><?= $nilaiAkhir[2] ?></td>
+
+							<!-- Kriteria -->
+							<td><?= $nilaiAkhir[3] ?></td>
+							<td><?= $nilaiAkhir[4] ?></td>
+							<td><?= $nilaiAkhir[5] ?></td>
+							<td><?= $nilaiAkhir[6] ?></td>
+							<td><?= $nilaiAkhir[7] ?></td>
+							<td><?= $nilaiAkhir[8] ?></td>
+							<td><?= $nilaiAkhir[9] ?></td>
+
 							<td><?= $nilaiAkhir[10] ?></td>
 							<td><?= $rank ?></td>
-							<td><?= $smart->cekKelayakan($nilaiAkhir[count($nilaiAkhir) - 1]) ?></td>
+							<td><?= $smart->cekKelayakan($nilaiAkhir[count($nilaiAkhir) - 1]) ? "Layak" : "Tidak Layak" ?></td>
 						</tr>
 					<?php $rank++;
 					} ?>

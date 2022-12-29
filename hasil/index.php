@@ -148,7 +148,6 @@ $smart = new Smart();
 					<tr>
 						<th>No</th>
 						<th>Kode</th>
-						<th>Nama</th>
 						<th>C1</th>
 						<th>C2</th>
 						<th>C3</th>
@@ -164,7 +163,6 @@ $smart = new Smart();
 						<tr>
 							<td><?= $no ?></td>
 							<td><?= $alternatif[1] ?></td>
-							<td><?= $alternatif[2] ?></td>
 							
 							<!-- Kriteria -->
 							<td><?= $alternatif[3] ?></td>
@@ -178,13 +176,13 @@ $smart = new Smart();
 					<?php $no++;
 					} ?>
 					<tr>
-						<td colspan="3">Cmin</td>
+						<td colspan="2">Cmin</td>
 						<?php foreach ($smart->cmin as $cmin) { ?>
 							<td><?= $cmin ?></td>
 						<?php } ?>
 					</tr>
 					<tr>
-						<td colspan="3">Cmax</td>
+						<td colspan="2">Cmax</td>
 						<?php foreach ($smart->cmax as $cmax) { ?>
 							<td><?= $cmax ?></td>
 						<?php } ?>

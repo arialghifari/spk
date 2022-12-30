@@ -1,8 +1,9 @@
+-- phpMyAdmin SQL Dump
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 18, 2022 at 09:28 AM
+-- Generation Time: Dec 30, 2022 at 04:21 AM
 -- Server version: 10.4.22-MariaDB
 -- PHP Version: 8.1.2
 
@@ -51,7 +52,7 @@ INSERT INTO `alternatif` (`id`, `kode`, `nama`, `C1`, `C2`, `C3`, `C4`, `C5`, `C
 (2, 'A2', 'Lulu', 100, 100, 50, 25, 75, 100, 50),
 (3, 'A3', 'Asril', 100, 50, 100, 25, 75, 80, 25),
 (4, 'A4', 'Derby', 50, 50, 100, 50, 100, 40, 50),
-(5, 'A5', 'Ardhito', 50, 100, 50, 25, 100, 20, 25);
+(5, 'A5', 'Ardhito', 50, 100, 100, 25, 100, 20, 25);
 
 -- --------------------------------------------------------
 
@@ -105,13 +106,13 @@ ALTER TABLE `kriteria`
 -- AUTO_INCREMENT for table `alternatif`
 --
 ALTER TABLE `alternatif`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `kriteria`
 --
 ALTER TABLE `kriteria`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

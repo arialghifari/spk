@@ -69,7 +69,7 @@ $smart = new Smart();
 
 		<!-- Alternatif -->
 		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
-			<h2 class="font-semibold text-xl mb-2">Data Alternatif</h2>
+			<h2 class="font-semibold text-xl mb-2">Alternatif</h2>
 
 			<table>
 				<thead>

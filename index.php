@@ -1,3 +1,17 @@
+<?php
+
+include './connection.php';
+
+$sql_kriteria = "SELECT COUNT(id) FROM kriteria";
+$query_kriteria = mysqli_query($conn, $sql_kriteria);
+$count_kriteria = mysqli_fetch_array($query_kriteria)[0];
+
+$sql_alternatif = "SELECT COUNT(id) FROM alternatif";
+$query_alternatif = mysqli_query($conn, $sql_alternatif);
+$count_alternatif = mysqli_fetch_array($query_alternatif)[0];
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -25,6 +39,20 @@
 	</nav>
 
 	<main class="flex flex-col w-full h-fit my-8 gap-8">
+		<div class="flex mx-8 gap-4">
+			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-red-200 w-full">
+				<h2 class="font-semibold text-lg">KRITERIA</h2>
+				<h2 class="font-semibold text-3xl"><?= $count_kriteria ?></h2>
+			</div>
+			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-blue-200 w-full">
+				<h2 class="font-semibold text-lg">ALTERNATIF</h2>
+				<h2 class="font-semibold text-3xl"><?= $count_alternatif ?></h2>
+			</div>
+			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-green-200 w-full">
+				<h2 class="font-semibold text-lg">SMART STEP</h2>
+				<h2 class="font-semibold text-3xl">6</h2>
+			</div>
+		</div>
 		<div class="mx-8 bg-zinc-50 p-8 rounded flex flex-col gap-4 shadow-md">
 			<h2 class="font-semibold text-xl">Sistem Pendukung Keputusan (SPK)</h2>
 			<p>Sistem Pendukung Keputusan (SPK) adalah sebuah sistem yang dibuat untuk membantu dan memudahkan proses pengambilan keputusan dengan menggunakan metode-metode tertentu, seperti analisis data, algoritma, atau teknik lainnya. SPK biasanya digunakan dalam situasi dimana terdapat banyak alternatif yang perlu dipertimbangkan, atau dimana proses pengambilan keputusan harus dilakukan dengan cepat dan tepat.</p>

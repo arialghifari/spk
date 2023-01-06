@@ -32,23 +32,23 @@ $count_alternatif = mysqli_fetch_array($query_alternatif)[0];
 		</div>
 
 		<div class="flex flex-col gap-4 text-zinc-100 mx-6">
-			<a class="py-2 px-4 rounded flex gap-2 items-center active" href="./"><img src="./assets/ic_home.svg" alt="icon home"> Home</a>
-			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./kriteria"><img src="./assets/ic_clipboard.svg" alt="icon kriteria"> Kriteria</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./"><img src="./assets/ic_home.svg" alt="icon home"> Home</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center active" href="./kriteria"><img src="./assets/ic_clipboard.svg" alt="icon kriteria"> Kriteria</a>
 			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./alternatif"><img src="./assets/ic_user.svg" alt="icon alternatif"> Alternatif</a>
 		</div>
 	</nav>
 
 	<main class="flex flex-col w-full h-fit my-8 gap-8">
 		<div class="flex mx-8 gap-4">
-			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-red-200 w-full">
+			<div class="bg-zinc-50 p-4 px-8 rounded flex flex-col gap-4 shadow-md shadow-red-200 w-full">
 				<h2 class="font-semibold text-lg">KRITERIA</h2>
 				<h2 class="font-semibold text-3xl"><?= $count_kriteria ?></h2>
 			</div>
-			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-blue-200 w-full">
+			<div class="bg-zinc-50 p-4 px-8 rounded flex flex-col gap-4 shadow-md shadow-blue-200 w-full">
 				<h2 class="font-semibold text-lg">ALTERNATIF</h2>
 				<h2 class="font-semibold text-3xl"><?= $count_alternatif ?></h2>
 			</div>
-			<div class="bg-zinc-50 p-4 rounded flex flex-col gap-4 shadow-md shadow-green-200 w-full">
+			<div class="bg-zinc-50 p-4 px-8 rounded flex flex-col gap-4 shadow-md shadow-green-200 w-full">
 				<h2 class="font-semibold text-lg">SMART STEP</h2>
 				<h2 class="font-semibold text-3xl">6</h2>
 			</div>

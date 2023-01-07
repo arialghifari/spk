@@ -32,8 +32,8 @@ $count_alternatif = mysqli_fetch_array($query_alternatif)[0];
 		</div>
 
 		<div class="flex flex-col gap-4 text-zinc-100 mx-6">
-			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./"><img src="./assets/ic_home.svg" alt="icon home"> Home</a>
-			<a class="py-2 px-4 rounded flex gap-2 items-center active" href="./kriteria"><img src="./assets/ic_clipboard.svg" alt="icon kriteria"> Kriteria</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center active" href="./"><img src="./assets/ic_home.svg" alt="icon home"> Home</a>
+			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./kriteria"><img src="./assets/ic_clipboard.svg" alt="icon kriteria"> Kriteria</a>
 			<a class="py-2 px-4 rounded flex gap-2 items-center hover:bg-zinc-700" href="./alternatif"><img src="./assets/ic_user.svg" alt="icon alternatif"> Alternatif</a>
 		</div>
 	</nav>
